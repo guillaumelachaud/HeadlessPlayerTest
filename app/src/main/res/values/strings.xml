@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HeadlessPlayerTest</string>
+    <string name="goHeadless">Go headless</string>
+    <string name="goSurface">Go SurfaceView</string>
+
+</resources>
