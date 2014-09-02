@@ -6,7 +6,10 @@ android:
 script: ./gradlew clean assembleRelease deployLocal
 after_success:
     - pwd
+    - ls 
+    - ls app/
     - ls headlessplayertest_builds/master
+
 deploy:
   provider: gcs
   access_key_id: GOOGTYSCNGUSQPKIOB6N
