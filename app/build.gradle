@@ -19,6 +19,31 @@ android {
     }
 }
 
+task deployDebug() << {
+    copy{
+        from "${buildDir}/outputs/apk"
+        into "${projectDir}/../headlessplayertest_builds/master"
+        rename '-debug.apk$', "-${new Date().format('yyyyMMdd-HHmm')}-${android.defaultConfig.versionCode}-${android.defaultConfig.versionName}-debug.apk"
+        include '*debug.apk'
+    }
+}
+
+task deployRelease() << {
+    copy{
+        from "${buildDir}/outputs/apk"
+        into "${projectDir}/../headlessplayertest_builds/master"
+        rename '-release.apk$', "-${new Date().format('yyyyMMdd-HHmm')}-${android.defaultConfig.versionCode}-${android.defaultConfig.versionName}-release.apk"
+        include '*release.apk'
+    }
+}
+
+task deployLocal << {
+    tasks.deployDebug.execute()
+    tasks.deployRelease.execute()
+
+}
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }

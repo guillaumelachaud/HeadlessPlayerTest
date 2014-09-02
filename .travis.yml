@@ -1,0 +1,20 @@
+language: android
+android:
+  components:
+  - build-tools-19.1.0
+  - android-19
+script: ./gradlew clean assembleRelease deployLocal
+after_success:
+    - pwd
+    - ls headlessplayertest_builds/master
+deploy:
+  provider: gcs
+  access_key_id: GOOGTYSCNGUSQPKIOB6N
+  secret_access_key:
+    secure: QUpD+udHOdeZXimMbVs+Oxzx1SCgk3tZVijChIVYTOY2HM77EnbmV6d8L0blm2HWSR2FaKX5DFVQFS4Bd4VOw/K1R+YXvvYIVRU38oCXyfO48B94r24evNwKBtXn9JkxY/V/MqF72anyN1i6kVgvH8oFH5c2XHEyM0zFYabBLpc=
+  bucket: "headlessplayertest_builds"
+  skip_cleanup: true
+  local-dir: headlessplayertest_builds/master
+  upload-dir: master
+  on:
+    all_branches: true
