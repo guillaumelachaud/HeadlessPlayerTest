@@ -6,7 +6,7 @@ android:
 script: ./gradlew clean assembleRelease deployLocal
 after_success:
     - pwd
-    - ls 
+    - ls
     - ls app/
     - ls headlessplayertest_builds/master
 
