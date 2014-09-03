@@ -9,13 +9,12 @@ after_success:
     - ls
     - ls app/build/outputs/apk
     - ls headlessplayertest_builds/master
-
 deploy:
   provider: gcs
   access_key_id: GOOGTYSCNGUSQPKIOB6N
   secret_access_key:
-    secure: QUpD+udHOdeZXimMbVs+Oxzx1SCgk3tZVijChIVYTOY2HM77EnbmV6d8L0blm2HWSR2FaKX5DFVQFS4Bd4VOw/K1R+YXvvYIVRU38oCXyfO48B94r24evNwKBtXn9JkxY/V/MqF72anyN1i6kVgvH8oFH5c2XHEyM0zFYabBLpc=
-  bucket: "headlessplayertest_builds"
+    secure: tx1+kBFEagY2iWKSOy9uSz71vbwwr9EVuyLF5B9AJTxbalSyp69xRRQa4meUrIffYUeAsZvf9WDfBxjRpYEqi6TPhb5uQstQCg6Aji05sYzvgZySwzt+pWKcK9JdfOf7aeLKPlWSf3e8x26wDjCriI8dufNp52y+MsjUm5ZD7PU=
+  bucket: headlessplayertest_builds
   skip_cleanup: true
   local-dir: headlessplayertest_builds/master
   upload-dir: master
